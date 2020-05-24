@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/etName"
+                android:hint="Name"
+                android:inputType="textCapWords"
+                android:text=""
+                android:theme="@style/EditTextTheme"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:met_singleLineEllipsis="true"
+                app:met_baseColor="@color/colorAccent"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="@color/colorAccent"
+
+                />
+
+
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/etPhone"
+                android:hint="Phone"
+                android:inputType="phone"
+                android:text=""
+                app:met_maxCharacters="11"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="20sp"
+                android:maxLength="20"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:met_singleLineEllipsis="true"
+                app:met_baseColor="@color/colorAccent"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="@color/colorAccent"
+                />
+
+
+            <ImageView
+                android:id="@+id/imageUpload"
+                android:src="@drawable/add_image"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="100dp"
+            android:layout_weight=".5"
+            android:background="@drawable/button_shape"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+
+        <View
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="0dp"/>
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="100dp"
+            android:layout_weight=".5"
+            android:background="@drawable/button_shape"
+            android:layout_height="wrap_content"
+            android:text="Update" />
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

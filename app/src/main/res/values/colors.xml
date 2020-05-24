@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e1ad01</color>
+    <color name="colorPrimaryDark">#e1ad01</color>
+    <color name="colorAccent">#0D3BAE</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="textGrey">#b7b7b7</color>
+
+
+    <color name="success">#4CAF50</color>
+    <color name="error">#B60F23</color>
+    <color name="color_url">#2D49C9</color>
+
+
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="grey">#f8f9fa</color>
+</resources>

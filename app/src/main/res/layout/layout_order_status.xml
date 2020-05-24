@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp"
+        android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/pickup"
+                android:text="REACHED PICKUP ??"
+                android:theme="@style/EditTextTheme"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+
+                />
+            <TextView
+                android:id="@+id/drop_off"
+                android:text="REACHED_DROPOFF ??"
+                android:theme="@style/EditTextTheme"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+
+                />
+            <TextView
+                android:id="@+id/complete"
+                android:text="COMPLETED ??"
+                android:theme="@style/EditTextTheme"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/black"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/button_shape"
+            android:layout_height="wrap_content"
+            android:text="Dismiss" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

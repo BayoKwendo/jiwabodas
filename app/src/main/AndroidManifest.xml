@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bodas.jiwa">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:launchMode="singleTask"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_ic_notification" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <!-- [END fcm_default_icon] -->
+        <!-- [START fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/notification_channel_id" />
+
+
+        <service
+            android:name="com.bados.jiwa.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <activity
+            android:name="com.bados.jiwa.LauncherActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
+
+        <activity
+            android:name="com.bados.jiwa.RegistrationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" >
+
+        </activity>
+
+        <activity
+            android:name="com.bados.jiwa.components.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.bados.jiwa.models.AppGlobals" />
+        <activity android:name="com.bados.jiwa.components.TripHistory"
+            android:label="Your trip History"
+            android:parentActivityName="com.bados.jiwa.components.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bados.jiwa.components.MainActivity" />
+        </activity>
+        <activity android:name="com.bados.jiwa.components.TripDetail"
+            android:label="Trip Details"
+            android:parentActivityName="com.bados.jiwa.components.TripHistory"/>
+        <activity android:name="com.bados.jiwa.components.mpesa.MPESAExpressActivity"
+            android:label="Payments">
+         </activity>
+
+        <service android:name="com.hypertrack.sdk.HyperTrackMessagingService" android:exported="false"
+            tools:ignore="AllowBackup">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.hypertrack.sdk.PUB_KEY"
+            android:value="G06cTM5a2Vnl-yqJmfM4X3G16YPhnXetPUgwvt-Iu0x7ryQAeaYsIHTLmPbO0Ru5l5AIUUvbHZivFLyWqvUobQ" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyDJnDn_O0nybXXsBypZ_5wTu1lVXOgHIjU" />
+    </application>
+
+</manifest>

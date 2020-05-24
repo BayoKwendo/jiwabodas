@@ -1,0 +1,24 @@
+image: mingc/android-build-box:1.12.0
+
+pipelines:
+  branches:
+    master:
+      - step:
+          caches:
+            - gradle
+            - gradlewrapper
+            - androidavd
+          script:
+            - bash ./gradlew assemble
+            # FETCH LAST COMMIT MESSAGE
+            - export LAST_COMMIT_MESSAGE=`git log -1 --pretty=%B`
+            - export BUILD_DATE=`date "+%Y/%m/%d@%H:%M:%S"`
+            # CHANNEL_TOKEN - From here: https://api.slack.com/custom-integrations/legacy-tokens
+            # CHANNEL - Your slack channel name to upload the apk 
+            - mv "./app/build/outputs/apk/driver/debug/app-driver-debug.apk" "./app-${BITBUCKET_BRANCH}-${BITBUCKET_BUILD_NUMBER}.apk"
+            - curl -F file=@"app-${BITBUCKET_BRANCH}-${BITBUCKET_BUILD_NUMBER}.apk" -F channels=$CHANNEL -F "initial_comment=Pipeline Build on $BUILD_DATE -- $LAST_COMMIT_MESSAGE" -F token=$CHANNEL_TOKEN https://slack.com/api/files.upload
+
+definitions:
+  caches:
+    gradlewrapper: ~/.gradle/wrapper
+    androidavd: $ANDROID_HOME/.android/avd

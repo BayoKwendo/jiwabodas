@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/status"
+            android:icon="@drawable/ic_trip_history"
+            android:visible="false"
+            android:title="Change Trip Status" />
+        <item
+            android:id="@+id/nav_trip_history"
+            android:icon="@drawable/ic_trip_history"
+            android:title="Trip History" />
+        <item
+            android:id="@+id/nav_updateInformation"
+            android:icon="@drawable/ic_event_note"
+            android:title="Update Information" />
+
+    </group>
+
+
+</menu>
